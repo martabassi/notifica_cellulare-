@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>telefono interfaccia</title>
+</head>
+
+<body>
+    
+<div class="container"> 
+
+
+<div class="contorno"> </div>
+<div class="contorno_interno"> </div>
+<div class="contorno_esterno"> </div>
+<div class="volume"> </div>
+<div class="fotocamera"> </div>
+<div class="luce_notifica" id="luce_notifica"> </div>
+<div class="notifica" id="prova"> 
+    <div class="notifica_immagine">
+    </div>
+    <div class="notifica_messaggio">
+        <h3>Andrea</h3><br> come va?
+    </div>
+</div>
+<div class="prova"> </div>
+<div class="schermo" id="schermo"> </div>
+<div class="schermo_not" id="schermo_not"> </div>
+<div class="huawei">HUAWEI</div>
+
+</div>
+
+<style>
+
+.container {
+    width:100%;
+    height:100vh;
+    color:#fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.contorno
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+width: 204px;
+height: 384px;
+border: 2px solid rgb(79, 79, 79);
+position: relative;
+border-radius: 16px;
+top: 6px;
+left: 6px;
+}
+
+.contorno_interno
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+font-size: 100px;
+display: inline-block;
+width: 208px;
+height: 388px;
+border: 4px solid rgba(103, 103, 103, 0.269); 
+position: relative;
+border-radius: 21px;
+top: 2px;
+left: 2px;
+background: linear-gradient(180deg, rgb(69, 69, 69) 0%, rgb(41, 41, 41) 50%,rgb(36, 36, 36) 100%);
+}
+
+.contorno_esterno
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+font-size: 100px;
+display: inline-block;
+width: 215px;
+height: 395px;
+border: 3px solid rgb(79, 79, 79); 
+position: relative;
+border-radius: 25px;
+}
+
+.volume
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+font-size: 100px;
+display: inline-block;
+width: 55px;
+height: 5px;
+border: 1px solid rgb(79, 79, 79); 
+position: relative;
+top: 23px;
+left: 83px;
+border-radius: 20px;
+background: linear-gradient(180deg, rgb(148, 148, 148) 0%, rgb(80, 80, 80) 50%,rgb(58, 58, 58) 100%);
+}
+
+.fotocamera
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+display: inline-block;
+width:7px;
+height:7px;
+border-radius:50px;
+background:rgb(103, 103, 103);
+position: relative;
+top: 23px;
+left: 160px;
+}
+
+.luce_notifica
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+display: inline-block;
+width:4px;
+height:4px;
+border-radius:50px;
+background-color:rgb(69, 69, 69);
+position: relative;
+top: 24px;
+left: 33px;
+animation: color-animation 3s infinite;
+
+}
+@keyframes color-animation {
+    0% {
+       background: #ff9e35
+    } 
+    10% {
+       background: #ff9e35
+    } 
+    20% {
+       background: rgb(69, 69, 69)
+    }
+ }
+
+.notifica
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+display: none;
+width:176px;
+height:40px;
+background-color:rgb(255, 255, 255);
+position: relative;
+z-index:1;
+top: 50px;
+left: 21px;
+animation: animationFrames forwards 1s;
+  animation-iteration-count: 1;
+  /* transform-origin: 50% 50%; */
+}
+
+@keyframes animationFrames{
+  0% {
+    opacity:0;
+    transform:  translate(0px,-5px)  rotate(0deg) ;
+    }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  rotate(0deg) ;
+    }
+
+}
+.notifica_messaggio
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+display: inline-block;
+width:130px;
+height:40px;
+background-color:rgb(123, 123, 123);
+color:rgb(227, 227, 227);
+position: absolute;
+z-index:1;
+top: 0px;
+left: 39px;
+padding-left: 10px; 
+text-align:left;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 8px;
+line-height: 3px;
+}
+
+.notifica_immagine
+{grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+display: inline-block;
+width:24px;
+height:24px;
+border-radius:50px;
+background-color:rgb(125, 125, 125);
+position: relative;
+top: 8px;
+left: 8px;
+}
+
+.schermo
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+font-size: 100px;
+display: inline-block;
+width: 188px;
+height: 300px;
+background:  rgb(85, 85, 85);
+position: relative;
+top: 45px;
+left: 16px;
+}
+
+.schermo_not
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+font-size: 100px;
+display: none;
+width: 188px;
+height: 300px;
+background:  rgb(169, 169, 169);
+position: relative;
+top: 45px;
+left: 16px;
+}
+
+.huawei
+{
+grid-column-start:2;
+grid-column-end:3;
+grid-row-start:2;
+grid-row-end: 3;
+font-size: 100px;
+display: inline-block;
+width: 40px;
+height: 40px;
+position: relative;
+top: 355px;
+left: 85px;
+text-align: center;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: bolder;
+font-size: 13px;
+color:rgb(136, 136, 136);
+}
+
+
+</style>
+
+<script>
+var schermo= document.getElementById('schermo')
+   schermo.addEventListener('click', ()=>{
+    var elemento = document.getElementById("prova")
+    elemento.style.display="inline-block" 
+    let luce = document.getElementById("luce_notifica")
+    luce.style.animation="paused"
+    let schermo_not = document.getElementById("schermo_not")
+    schermo_not.style.display="inline-block"
+   })
+   schermo_not.addEventListener('click', ()=>{
+        schermo_not.style.display="none"
+    var elemento = document.getElementById("prova")
+        elemento.style.display="none"
+    let luce = document.getElementById("luce_notifica")
+    luce.style.animation= "color-animation 3s infinite"
+    })
+</script>
+</body>
+</html>
+
+
